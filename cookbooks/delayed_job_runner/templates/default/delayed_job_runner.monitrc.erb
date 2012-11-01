@@ -1,0 +1,7 @@
+check process delayed_job_runner_<%= @app_name %>
+  with pidfile /data/workbeast/current/tmp/pids/delayed_job.pid
+  start program = "/bin/sh -c 'cd /data/workbeast/current && bundle exec script/job_runner start <%= @environment %>'"
+    as uid <%= @user %> and gid <%= @user %>
+  stop program = "/bin/sh -c 'cd /data/workbeast/current && bundle exec script/job_runner stop'"
+    as uid <%= @user %> and gid <%= @user %>
+  group <%= @app_name %>

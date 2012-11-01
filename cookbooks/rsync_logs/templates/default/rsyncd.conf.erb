@@ -1,0 +1,12 @@
+# /etc/rsyncd.conf
+
+pid file = /var/run/rsyncd.pid
+max connections = 4
+uid = 1000
+gid = 1000
+read only = false
+
+[<%=@app_name%>]
+path = /home/<%=@username%>/<%=@app_name%>_logs
+  comment = <%=@app_name%> log aggregator
+

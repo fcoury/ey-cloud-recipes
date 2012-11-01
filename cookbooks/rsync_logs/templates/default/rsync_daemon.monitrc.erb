@@ -1,0 +1,7 @@
+check process rsync_daemon
+  with pidfile /var/run/rsync.pid
+  start program = "rsync --daemon"
+    as uid <%= @user %> and gid <%= @user %>
+  stop program = "killall rsync"
+    as uid <%= @user %> and gid <%= @user %>
+  group <%= @app_name %>

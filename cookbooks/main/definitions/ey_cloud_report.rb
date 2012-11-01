@@ -4,3 +4,4 @@ define :ey_cloud_report do
     epic_fail true
   end
 end
+

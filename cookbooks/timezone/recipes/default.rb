@@ -1,15 +1,13 @@
-# Add your required timezone name here:
-# If using JRuby with Trinidad, you must also modify the env.custom file with the desired timezone
-# ex: add_java_option -Duser.timezone=UTC
-timezone = "UTC"
+#
+# Cookbook Name:: timezone
+# Recipe:: default
+#
 
-
-service "vixie-cron"
-service "sysklogd"
-service "nginx"
-
-link "/etc/localtime" do
-  to "/usr/share/zoneinfo/#{timezone}"
-  notifies :restart, resources(:service => ["vixie-cron", "sysklogd", "nginx"]), :delayed
-  not_if "readlink /etc/localtime | grep -q '#{timezone}$'"
+run_for_app("workbeast") do |app_name, data|
+  link "/etc/localtime" do
+    filename = "/usr/share/zoneinfo/UCT"
+    to filename
+    only_if { File.exists? filename }
+  end
 end
+
