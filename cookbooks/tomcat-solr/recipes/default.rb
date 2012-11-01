@@ -12,6 +12,8 @@ if node["instance_role"] == 'util' and node["name"] == 'solr'
     message "installing apache tomcat and solr" 
   end 
 
+  package "tomcat"
+
   solr_path = "/opt/solr"
   solr_apache_mirror = "http://www.us.apache.org/dist"
 
