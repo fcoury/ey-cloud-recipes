@@ -9,7 +9,7 @@
 
 if node["instance_role"] == 'util' and node["name"] == 'solr'
   ey_cloud_report "tomcat-solr" do 
-    message "Solr on Apache Tomcat" 
+    message "installing apache tomcat and solr" 
   end 
 
   solr_path = "/opt/solr"
