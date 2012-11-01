@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-if node[:instance_role] == 'util' and node[:name] == 'solr'
+if node["instance_role"] == 'util' and node["name"] == 'solr'
   ey_cloud_report "tomcat-solr" do 
     message "Solr on Apache Tomcat" 
   end 
