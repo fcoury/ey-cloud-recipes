@@ -1,0 +1,16 @@
+# tomcat-solr cookbook
+
+# Requirements
+
+# Usage
+
+# Attributes
+
+# Recipes
+
+# Author
+
+Author:: Felipe Gonçalves Coury (<felipe.coury@gmail.com>)
+         http://gistia.com 
+         http://webbynode.com
+         http://twitter.com/fcoury

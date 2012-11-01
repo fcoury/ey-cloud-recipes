@@ -1,0 +1,6 @@
+check process tomcat_8080
+with pidfile /var/run/tomcat-6.pid
+  start program = "/etc/init.d/tomcat-6 start" as uid <%= @user %> and gid <%= @group %>
+  stop program = "/etc/init.d/tomcat-6 stop" as uid <%= @user %> and gid <%= @group %>
+  if totalmem is greater than 1024 MB for 2 cycles then restart # eating up memory?
+  group tomcat
