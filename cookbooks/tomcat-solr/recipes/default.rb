@@ -83,7 +83,7 @@ if node["instance_role"] == 'util' and node["name"] == 'solr'
 
       chown -R tomcat:tomcat /var/lib/tomcat-6/webapps/solr
     EOS
-    creates "/var/lib/tomcat-6/webapps/solr/WEB-INF/lib"
+    creates "/var/lib/tomcat-6/webapps/solr/WEB-INF/lib/zookeeper-3.3.6.jar"
   end
 
   template "/opt/solr/collection1/conf/solrconfig.xml" do
