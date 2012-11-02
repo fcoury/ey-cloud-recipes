@@ -48,7 +48,7 @@ if node["instance_role"] == 'util' and node["name"] == 'solr'
     command <<-EOS
       set -e
 
-      /etc/init.d/apache-6 restart
+      /etc/init.d/tomcat-6 restart
 
       cd /tmp
       tar zxf commons-logging-1.1.1-bin.tar.gz
