@@ -101,7 +101,7 @@
        replication is in use, this should match the replication
        configuration.
     -->
-  <datadir>${solr.data.dir:<%= node[:solr][:path] %>}</datadir>
+  <datadir>${solr.data.dir:/opt/solr}</datadir>
 
 
   <!-- the directoryfactory to use for indexes.
