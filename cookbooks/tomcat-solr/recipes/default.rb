@@ -48,8 +48,6 @@ if node["instance_role"] == 'util' and node["name"] == 'solr'
     command <<-EOS
       set -e
 
-      /etc/init.d/tomcat-6 restart
-
       cd /tmp
       tar zxf commons-logging-1.1.1-bin.tar.gz
       cd /tmp/commons-*
@@ -62,6 +60,8 @@ if node["instance_role"] == 'util' and node["name"] == 'solr'
       cp -R example/webapps/solr.war /opt/solr
 
       chown -R tomcat:tomcat /opt/solr
+
+      /etc/init.d/tomcat-6 restart
 
       cp dist/*.jar /usr/share/tomcat-6/lib
       cp dist/solrj-lib/*.jar /usr/share/tomcat-6/lib
