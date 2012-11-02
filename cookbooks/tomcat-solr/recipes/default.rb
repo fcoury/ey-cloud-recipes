@@ -40,6 +40,7 @@ if node["instance_role"] == 'util' and node["name"] == 'solr'
 
   template "/etc/tomcat-6/Catalina/localhost/solr.xml" do
     owner "tomcat"
+    source "solr.xml.erb"
   end
 
   execute "extract_solr" do
